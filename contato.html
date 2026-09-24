@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | Martanii Figueiredo</title>
+  <meta name="description" content="Fale com a Martanii Figueiredo pelo formulário, WhatsApp, telefone ou e-mail e solicite o orçamento do seu projeto.">
+  <meta name="theme-color" content="#231660">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Contato | Martanii Figueiredo">
+  <meta property="og:description" content="Fale com a Martanii Figueiredo pelo formulário, WhatsApp, telefone ou e-mail e solicite o orçamento do seu projeto.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.className = "js";</script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body data-page="contato">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div id="site-header"></div>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="container">
+        <nav aria-label="Você está em"><ol class="breadcrumb"><li><a href="index.html">Início</a></li><li aria-current="page">Contato</li></ol></nav>
+        <div class="hero-ico"><i data-icon="message"></i></div>
+        <h1>Contato</h1>
+        <p>Conte um pouco sobre você e o seu projeto. Vamos adorar ajudar!</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="form-card reveal">
+            <h2>Envie sua mensagem</h2>
+            <p class="form-hint" style="margin-bottom:24px">Campos com <span style="color:var(--accent)">*</span> são obrigatórios.</p>
+            <form id="contact-form" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="nome">Nome e sobrenome <span class="req">*</span></label>
+                  <input id="nome" name="nome" type="text" autocomplete="name" required>
+                  <span class="error">Informe seu nome.</span>
+                </div>
+                <div class="field">
+                  <label for="email">E-mail <span class="req">*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" required>
+                  <span class="error">Informe um e-mail válido.</span>
+                </div>
+                <div class="field">
+                  <label for="telefone">Telefone / WhatsApp</label>
+                  <input id="telefone" name="telefone" type="tel" autocomplete="tel">
+                </div>
+                <div class="field">
+                  <label for="cidade">Cidade</label>
+                  <input id="cidade" name="cidade" type="text" autocomplete="address-level2">
+                </div>
+                <div class="field">
+                  <label for="servico">Serviço de interesse</label>
+                  <select id="servico" name="servico">
+                    <option value="">Selecione...</option>
+                    <option>Desenvolvimento Web</option>
+                    <option>Social Media</option>
+                    <option>Criação de Logo</option>
+                    <option>Google Ads</option>
+                    <option>Meta Ads</option>
+                    <option>E-mail Marketing</option>
+                    <option>Projeto sob medida</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="plano">Plano</label>
+                  <input id="plano" name="plano" type="text" placeholder="Ex.: Landing Page">
+                </div>
+                <div class="field full">
+                  <label for="mensagem">Sua mensagem <span class="req">*</span></label>
+                  <textarea id="mensagem" name="mensagem" required></textarea>
+                  <span class="error">Escreva sua mensagem.</span>
+                </div>
+              </div>
+              <div class="form-actions" style="margin-top:22px">
+                <button class="btn btn-whats" type="submit"><i data-icon="send"></i> Enviar mensagem</button>
+                <button class="btn btn-outline" type="button" id="send-email"><i data-icon="mail"></i> Enviar por e-mail</button>
+              </div>
+              <div class="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <aside class="info-card reveal">
+            <h3>Outros canais</h3>
+            <p>Prefere falar agora? Escolha o canal mais prático para você.</p>
+            <ul class="info-list">
+              <li><span class="i-ico"><i data-icon="whatsapp"></i></span><div><small>WhatsApp</small><a data-link="whatsapp" href="#"><span data-site="telefone">—</span></a></div></li>
+              <li data-hide-wrap><span class="i-ico"><i data-icon="phone"></i></span><div><small>Telefone</small><a data-link="tel2" href="#"><span data-site="telefone2" data-hide-empty>—</span></a></div></li>
+              <li><span class="i-ico"><i data-icon="mail"></i></span><div><small>E-mail</small><a data-link="email" href="#"><span data-site="email">—</span></a></div></li>
+              <li><span class="i-ico"><i data-icon="pin"></i></span><div><small>Endereço</small><span><span data-site="endereco">—</span><br><span data-site="cidade">—</span></span></div></li>
+              <li><span class="i-ico"><i data-icon="clock"></i></span><div><small>Horário</small><span data-site="horario">—</span></div></li>
+            </ul>
+            <div class="socials">
+              <a data-link="instagram" href="#" aria-label="Instagram"><i data-icon="instagram"></i></a>
+              <a data-link="facebook" href="#" aria-label="Facebook"><i data-icon="facebook"></i></a>
+              <a data-link="linkedin" href="#" aria-label="LinkedIn"><i data-icon="linkedin"></i></a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="map reveal" id="map"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

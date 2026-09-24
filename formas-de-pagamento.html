@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formas de Pagamento | Martanii Figueiredo</title>
+  <meta name="description" content="Pague seu projeto por PIX, transferência bancária ou cartão de crédito. Veja os dados e como enviar o comprovante.">
+  <meta name="theme-color" content="#231660">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Formas de Pagamento | Martanii Figueiredo">
+  <meta property="og:description" content="Pague seu projeto por PIX, transferência bancária ou cartão de crédito. Veja os dados e como enviar o comprovante.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.className = "js";</script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body data-page="pagamento">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div id="site-header"></div>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="container">
+        <nav aria-label="Você está em"><ol class="breadcrumb"><li><a href="index.html">Início</a></li><li aria-current="page">Formas de Pagamento</li></ol></nav>
+        <div class="hero-ico"><i data-icon="card"></i></div>
+        <h1>Formas de Pagamento</h1>
+        <p>Escolha a opção mais prática para você. Se precisar de outra forma, é só falar com a gente.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="pay-grid">
+          <div class="pay-card reveal">
+            <div class="f-ico"><i data-icon="qr"></i></div>
+            <h3>PIX</h3>
+            <p>Pagamento instantâneo, a qualquer hora e em qualquer dia da semana.</p>
+            <ul class="pay-data">
+              <li><span>Chave (<span data-site="pagamento.pixTipo">E-mail</span>)</span><b data-site="pagamento.pixChave">—</b></li>
+              <li><span>Titular</span><b data-site="pagamento.titular">—</b></li>
+            </ul>
+            <button class="btn btn-primary btn-block" type="button" data-copy="pagamento.pixChave"><i data-icon="copy"></i> Copiar chave PIX</button>
+          </div>
+          <div class="pay-card reveal">
+            <div class="f-ico"><i data-icon="bank"></i></div>
+            <h3>Transferência bancária</h3>
+            <p>TED ou depósito na conta abaixo.</p>
+            <ul class="pay-data">
+              <li><span>Banco</span><b data-site="pagamento.banco">—</b></li>
+              <li><span>Agência</span><b data-site="pagamento.agencia">—</b></li>
+              <li><span>Conta</span><b data-site="pagamento.conta">—</b></li>
+              <li><span>Titular</span><b data-site="pagamento.titular">—</b></li>
+              <li><span>Documento</span><b data-site="pagamento.documento">—</b></li>
+            </ul>
+            <button class="btn btn-outline btn-block" type="button" data-copy="pagamento.conta"><i data-icon="copy"></i> Copiar número da conta</button>
+          </div>
+          <div class="pay-card reveal">
+            <div class="f-ico"><i data-icon="card"></i></div>
+            <h3>Cartão de crédito</h3>
+            <p>Pague com segurança por link de pagamento, <span data-site="pagamento.parcelamento">em até 12x no cartão</span>.</p>
+            <div class="card-brands" aria-label="Bandeiras aceitas"><span>VISA</span><span>MASTERCARD</span><span>ELO</span><span>AMEX</span><span>HIPERCARD</span></div>
+            <a class="btn btn-whats btn-block" data-link="whatsapp" data-msg="Olá! Gostaria de receber o link de pagamento com cartão de crédito." href="contato.html"><i data-icon="whatsapp"></i> Solicitar link de pagamento</a>
+          </div>
+        </div>
+
+        <div class="notice reveal">
+          <i data-icon="info"></i>
+          <p><strong>Importante:</strong> após o pagamento, envie o comprovante para <a data-link="email-fin" href="#"><span data-site="emailFinanceiro">financeiro</span></a> ou pelo <a data-link="whatsapp" data-msg="Olá! Segue o comprovante de pagamento." href="#">WhatsApp</a>, informando seu nome e o serviço contratado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Condições</span>
+          <h2>Transparência do orçamento à entrega</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="feature-row reveal"><div class="f-ico"><i data-icon="file"></i></div><div><h4>Orçamento fechado</h4><p>Você conhece o valor total e o que está incluso antes de começar.</p></div></div>
+          <div class="feature-row reveal"><div class="f-ico"><i data-icon="card"></i></div><div><h4>Parcelamento</h4><p>Divida o valor no cartão de crédito e comece seu projeto agora.</p></div></div>
+          <div class="feature-row reveal"><div class="f-ico"><i data-icon="zap"></i></div><div><h4>Início imediato</h4><p>Com o pagamento confirmado, seu projeto entra em produção.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="site-help"></div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
