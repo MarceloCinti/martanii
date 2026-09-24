@@ -380,30 +380,65 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* ---------------- Portfólio: filtro + "ver mais" ---------------- */
+  /* ---------------- Portfólio: abas por plano + "ver mais" ---------------- */
+  function workCard(w, planName) {
+    var thumb;
+    if (w.imagem) {
+      thumb = '<div class="work-thumb has-img"><img src="' + esc(w.imagem) + '" alt="Site ' + esc(w.nome) + '" loading="lazy"></div>';
+    } else {
+      thumb = '<div class="work-thumb" style="--c1:' + esc(w.c1 || "#5227d9") + ";--c2:" + esc(w.c2 || "#ff6a3d") + '" aria-hidden="true">' +
+        '<div class="ui"><div class="ui-bar"><i></i><i></i><i></i><em></em></div>' +
+        '<div class="ui-hero"><div class="ui-line w60"></div><div class="ui-line w40 sm"></div><span class="ui-btn"></span></div>' +
+        '<div class="ui-body"><div class="ui-card"></div><div class="ui-card"></div><div class="ui-card"></div></div></div></div>';
+    }
+    var btn = w.url
+      ? '<a class="btn btn-primary btn-sm" href="' + esc(w.url) + '" target="_blank" rel="noopener">Ver site ' + icon("arrow") + "</a>"
+      : '<a class="btn btn-outline btn-sm" href="contato.html?servico=' + encodeURIComponent("Desenvolvimento Web") +
+        "&plano=" + encodeURIComponent(planName) + '">Quero um site assim ' + icon("arrow") + "</a>";
+    return '<article class="work">' + thumb +
+      '<div class="work-info"><h3>' + esc(w.nome) + "</h3>" +
+      '<p class="work-plan">Plano: <strong>' + esc(planName.toUpperCase()) + "</strong>" +
+      (w.modelo ? ' <span class="tag">Modelo</span>' : "") + "</p>" + btn + "</div></article>";
+  }
+
   function initPortfolio() {
-    var grid = $(".portfolio");
-    if (!grid) return;
-    var items = $$(".work", grid);
-    var buttons = $$(".filters button");
+    var grid = $("#portfolio-grid"), tabsBox = $("#portfolio-tabs");
+    if (!grid || !tabsBox) return;
+    var works = window.PORTFOLIO || [], plans = window.PORTFOLIO_PLANOS || [];
     var moreBtn = $("#load-more");
-    var STEP = 6, visible = STEP, current = "all";
+    var STEP = 6, visible = STEP;
+    plans = plans.filter(function (p) { return works.some(function (w) { return w.plano === p.id; }); });
+    if (!plans.length) { grid.innerHTML = '<p class="center">Em breve.</p>'; moreBtn.parentElement.hidden = true; return; }
+
+    var hashId = (window.location.hash || "").slice(1);
+    var current = plans.some(function (p) { return p.id === hashId; }) ? hashId : plans[0].id;
+
+    tabsBox.innerHTML = plans.map(function (p) {
+      return '<button type="button" role="tab" id="tab-' + p.id + '" data-filter="' + p.id + '">' + esc(p.nome) + "</button>";
+    }).join("");
+    var buttons = $$("button", tabsBox);
 
     var render = function () {
-      var matches = items.filter(function (it) { return current === "all" || it.getAttribute("data-cat") === current; });
-      items.forEach(function (it) { it.hidden = true; });
-      matches.forEach(function (it, i) { it.hidden = i >= visible; });
-      if (moreBtn) moreBtn.parentElement.hidden = matches.length <= visible;
+      var plan = plans.filter(function (p) { return p.id === current; })[0];
+      var list = works.filter(function (w) { return w.plano === current; });
+      buttons.forEach(function (b) {
+        var on = b.getAttribute("data-filter") === current;
+        b.setAttribute("aria-selected", on ? "true" : "false");
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      grid.setAttribute("aria-labelledby", "tab-" + current);
+      grid.innerHTML = list.slice(0, visible).map(function (w) { return workCard(w, plan.nome); }).join("");
+      moreBtn.parentElement.hidden = list.length <= visible;
     };
     buttons.forEach(function (b) {
       b.addEventListener("click", function () {
-        buttons.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
         current = b.getAttribute("data-filter");
         visible = STEP;
+        if (window.history && history.replaceState) history.replaceState(null, "", "#" + current);
         render();
       });
     });
-    if (moreBtn) moreBtn.addEventListener("click", function () { visible += STEP; render(); });
+    moreBtn.addEventListener("click", function () { visible += STEP; render(); });
     render();
   }
 

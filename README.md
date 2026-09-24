@@ -16,7 +16,7 @@ Site estático (HTML, CSS e JavaScript puro): não precisa de instalação nem d
 | Serviços › Meta Ads (planos) | `meta-ads.html` |
 | Serviços › E-mail Marketing (planos) | `email-marketing.html` |
 | Formas de Pagamento | `formas-de-pagamento.html` |
-| Portfólio (filtro por plano + “ver mais”) | `portfolio.html` |
+| Portfólio (abas por plano + “ver mais”) | `portfolio.html` + `assets/js/portfolio.js` |
 | Contato (formulário + mapa) | `contato.html` |
 | Página não encontrada | `404.html` |
 
@@ -44,9 +44,14 @@ Os textos estão direto no HTML de cada página. **Revise todos antes de publica
 (prazos, itens inclusos nos planos, condições de pagamento).
 
 ### 4. Portfólio
-Os cartões do portfólio são *modelos de layout* ilustrativos. Para adicionar trabalhos reais,
-siga as instruções no comentário dentro de `portfolio.html` (trocar a ilustração por uma imagem
-em `assets/img/portfolio/` e colocar o link do site do cliente).
+Os projetos ficam em `assets/js/portfolio.js`, um por linha, organizados em abas por plano
+(Página Inicial, Landing Page, One Page, Start, Avançado, Completo, Sob medida).
+Para cada trabalho real da Martanii Figueiredo:
+1. salve a captura de tela em `assets/img/portfolio/` (de preferência 1200×900);
+2. adicione `{ nome: "CLIENTE", plano: "landing", imagem: "assets/img/portfolio/cliente.webp", url: "https://..." }`;
+3. apague os modelos (linhas com `modelo: true`).
+
+Abas sem projetos somem sozinhas e o botão “Ver mais” aparece quando uma aba tem mais de 6 trabalhos.
 
 ### 5. Logo
 A marca “MF” está em `assets/img/logo.svg` / `favicon.svg` e é desenhada em `brandMark()` no
