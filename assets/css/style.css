@@ -213,6 +213,14 @@ p { margin: 0 0 1em; }
   mask-image: linear-gradient(to bottom, #000 20%, transparent 90%);
   -webkit-mask-image: linear-gradient(to bottom, #000 20%, transparent 90%);
 }
+/* Cardume animado ao fundo (canvas em assets/js/fish.js) */
+.hero-fish {
+  position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, .55) 0%, #000 50%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, .55) 0%, #000 50%);
+}
+.hero-fish-front { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+.hero .container { z-index: 1; }
 .hero .container { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
 .hero h1 { color: #fff; }
 .hero h1 .hl { background: linear-gradient(90deg, #ffb199, #ff6a3d); -webkit-background-clip: text; background-clip: text; color: transparent; }

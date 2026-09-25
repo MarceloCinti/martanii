@@ -53,7 +53,13 @@ Para cada trabalho real da Martanii Figueiredo:
 
 Abas sem projetos somem sozinhas e o botão “Ver mais” aparece quando uma aba tem mais de 6 trabalhos.
 
-### 5. Logo
+### 5. Animação da primeira seção
+O cardume de peixes da página inicial fica em `assets/js/fish.js`. No topo do arquivo dá para
+ajustar a quantidade de peixes (`DENSITY`), a frequência do peixe que muda de direção
+(`CHOSEN_EVERY`, hoje 1 a cada 10) e as cores. A animação pausa sozinha quando sai da tela e
+fica parada para quem ativou “reduzir movimento” no aparelho.
+
+### 6. Logo
 A marca “MF” está em `assets/img/logo.svg` / `favicon.svg` e é desenhada em `brandMark()` no
 `assets/js/main.js`. Se você já tiver uma logo, substitua esses pontos.
 
