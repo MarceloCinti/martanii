@@ -53,12 +53,7 @@ Para cada trabalho real da Martanii Figueiredo:
 
 Abas sem projetos somem sozinhas e o botão “Ver mais” aparece quando uma aba tem mais de 6 trabalhos.
 
-### 5. Animação da primeira seção
-A galáxia animada da página inicial fica em `assets/js/galaxy.js`. No topo do arquivo dá para
-ajustar o número de braços, a curvatura, a velocidade de rotação e as cores. Ela pausa sozinha
-quando sai da tela e fica parada para quem ativou “reduzir movimento” no aparelho.
-
-### 6. Logo
+### 5. Logo
 A marca “MF” está em `assets/img/logo.svg` / `favicon.svg` e é desenhada em `brandMark()` no
 `assets/js/main.js`. Se você já tiver uma logo, substitua esses pontos.
 
